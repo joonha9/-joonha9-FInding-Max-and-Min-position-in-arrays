@@ -1,0 +1,37 @@
+#include<iostream>
+#include<cstring>
+using namespace std;
+
+int main() {
+	
+	char v[4][10];
+	for (int x = 0; x < 4; x++) {
+		cin >> v[x];
+	}
+	int max = 0;
+	int maxId = 0;
+	int minId = 0;
+	int min = 100;
+	for (int y = 0; y < 4; y++) {
+		int n;
+		for (int x = 0; x < 10; x++) {
+			if (v[y][x] == '\0') {
+				n = x;
+			}
+		}
+		if (max < n) {
+			max = n;
+			maxId = y;
+		}
+		if (min > n) {
+			min = n;
+			minId = y;
+
+		}
+	}
+	cout << "긴문장:" << maxId;
+	cout << endl;
+	cout << "짧은문장:" << minId;
+	return 0;
+}
+
